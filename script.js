@@ -30,6 +30,7 @@ function init() {
   ];
 
   const bg = document.querySelector("#bg");
+  const webring = document.querySelector("#webring") // kolla här Tiff
   const download = document.querySelector("#download");
   const message = document.querySelector("#message");
   const sound = document.querySelector("#sound");
@@ -58,10 +59,11 @@ function init() {
   bg.addEventListener("click", function () {
     currentIndex++;
     if (currentIndex === photos.length) {
+      webring.style.zIndex = 9999;
       download.style.zIndex = 30;
-      sound.currentTime = 0;
-      sound.play();
     } else {
+      sound.play(); //
+      sound.currentTime = 0; // hehe haha gud, ok!!!!!! forstår!!! n ice !!!!!!! :D :D 
       bg.style.backgroundImage = `url(${photos[currentIndex]})`;
     }
   });
